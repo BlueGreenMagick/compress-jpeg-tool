@@ -25,7 +25,7 @@ const optionDefinitions: OptionDefinition[] = [
 const usage: UsageSection[] = [
   {
     header: 'Image Compression Tool',
-    content: 'Compress images. Currently only outputs in MozJPEG.'
+    content: 'Compress images. Currently only supports jpeg input and MozJPEG output.'
   },
   {
     header: 'Usage',
@@ -71,6 +71,7 @@ async function run() {
     const quality = options['quality'] as number;
     const outDir = options['outDir'] as string;
     const inputs = options['input'] as string[];
+    console.log(quality, outDir, inputs)
 
     await fs.mkdir(outDir, {recursive: true});
 
